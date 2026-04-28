@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message for You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+<body class="msg-body">
+
+    <div class="msg-container">
+        <div class="top-header-box">
+            Oya wenuwen chuti deyak hadann one una...<br>
+            puluwn widiyt heduwe ithin.
+        </div>
+
+        <div class="mid-section">
+            <div class="video-container">
+                <video controls>
+                    <source src="msgvideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="vid-placeholder">MP4 video</p> 
+            </div>
+
+            <div class="side-text">
+                <h3>Mage Nowana oyataa....</h3>
+                <p>
+                    Man dan nehe ai api muna gehunee kiyala<br>
+                    Api dennata ekathu wenn beri nm ai me ganat api lan une?...<br><br>
+                    Man kemathima, mata hambenwt asama de oya. Man dannawa oya mata himi web nhe kiyala... e unata me loke widinna asama deyak tamai oyage adare..<br><br>
+                    Kawadawath mage nowana Lassana lamavoo..<br>
+                    Man thamath oyata adareii
+                </p>
+            </div>
+        </div>
+
+        <div class="sub-banner">
+            Oya ekka yanna asawen hitpu samahara then...
+        </div>
+
+        <div class="image-row">
+            <div class="img-card" onclick="toggleLabel(this)">
+                <img src="msgimg1.png" alt="Japan">
+                <div class="label">Arashiyama Bamboo Grove</div>
+            </div>
+            <div class="img-card" onclick="toggleLabel(this)">
+                <img src="msgimg2.png" alt="Place 2">
+                <div class="label">Matsushima Bay</div>
+            </div>
+            <div class="img-card" onclick="toggleLabel(this)">
+                <img src="msgimg3.png" alt="Place 3">
+                <div class="label">Aescher</div>
+            </div>
+            <div class="img-card" onclick="toggleLabel(this)">
+                <img src="msgimg4.png" alt="Place 4">
+                <div class="label">Kandersteg</div>
+            </div>
+            <div class="img-card" onclick="toggleLabel(this)">
+                <img src="msgimg5.png" alt="Place 5">
+                <div class="label">Seoul</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="mainpage.html" class="back-btn">back</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleLabel(card) {
+            // Toggles the zoom and the label visibility
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

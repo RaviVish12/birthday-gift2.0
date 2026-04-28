@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="firstpageMain">
+        <div class="imagediv">
+            <img src="1bgduck.jpg" alt="this is a duck">
+        </div>
+
+     
+
+        <div class="FPpara">
+            <p id="loadingText">Small GIFT from ME</p>
+        </div>
+
+        <div>
+            <button class="FPbutton" onclick="startLoading()">Click Me</button>  
+        </div>
+    </section>
+
+    <script>
+    function startLoading() {
+    let count = 1;
+    const textElement = document.getElementById("loadingText");
+    const button = document.querySelector(".FPbutton");
+    
+    // Disable button so they don't click twice
+    button.style.pointerEvents = "none";
+    button.style.opacity = "0.5";
+
+    // Interval to update the number
+    const interval = setInterval(() => {
+        textElement.innerText = count + "%";
+        count++;
+
+        if (count > 100) {
+            clearInterval(interval);
+            // Go to the main page after 100%
+            window.location.href = "mainpage.html";
+        }
+    }, 20); // 20ms per 1% = roughly 3 seconds total. Lower this for faster speed.
+}
+    </script>
+</body>
+</html>

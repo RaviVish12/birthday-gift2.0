@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="wishes-body">
+
+    <div class="header-banner">
+        <h1>WISHES FROM ME</h1>
+    </div>
+
+    <div class="card-grid-wrapper">
+        <div class="card-container" id="cardGrid">
+            </div>
+    </div>
+
+    <div class="footer">
+        <a href="mainpage.html" class="back-btn">back</a>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <p id="wishMessage"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const wishesData = [
+            { text: "May your year be filled with success and happiness! 🌟", img:"wish1.jpg" },
+            { text: "Keep shining and chasing your dreams, no matter what! 💪", img: "wish2.jpg" },
+            { text: "You are stronger than you think. Happy Birthday! ❤️", img: "wish3.jpg" },
+            { text: "Wishing you endless joy and beautiful memories today. ✨", img: "wish4.jpg" },
+            { text: "May every path you take lead to success. 🚀", img: "wish5.jpg" },
+            { text: "Always believe in yourself as much as I believe in you. 😇", img: "wish6.jpg" },
+            { text: "Sending you a big hug and lots of love on your special day! 🥰", img: "wish7.jpg" },
+            { text: "Your kindness is a gift to everyone who knows you. 🌸", img: "wish8.jpg" },
+            { text: "To a year of growth, laughter, and big achievements! 🏆", img: "wish9.jpg" },
+            { text: "May your life be as bright as your smile. ☀️", img: "wish10.jpg" },
+            { text: "Never stop being the wonderful person you are. 💎", img: "wish11.jpg" },
+            { text: "May all your heart's desires come true this year! 🎈", img: "wish12.jpg" }
+        ];
+
+        const grid = document.getElementById('cardGrid');
+        const overlay = document.getElementById('overlay');
+        const wishText = document.getElementById('wishMessage');
+
+        wishesData.forEach((wish, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            
+            // Add the image to the card
+            const img = document.createElement('img');
+            img.src = wish.img; 
+            img.alt = `Wish ${index + 1}`;
+            img.className = 'card-image';
+            card.appendChild(img);
+
+            card.onclick = () => showWish(wish.text, card);
+            grid.appendChild(card);
+        });
+
+        function showWish(message, cardElement) {
+            cardElement.classList.add('clicked');
+            
+            setTimeout(() => {
+                wishText.innerText = message;
+                overlay.classList.add('active'); // Use class to show overlay
+                cardElement.classList.remove('clicked');
+            }, 300);
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
